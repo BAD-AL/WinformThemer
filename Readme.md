@@ -55,9 +55,80 @@ https://converter.telerik.com/
 Note:
 Event handlers may need to be corrected
 ```C#
+//C#
 form.HandleCreated += Form_HandleCreated
 ```
 Should become:
 ```VB
+'VB.net
 AddHandler form.HandleCreated, AddressOf Form_HandleCreated
+
+' Also may need to add a "End Function" to the "DwmSetWindowAttribute" sub declaration
 ```
+
+## Creating your own Theme config
+A default dark theme is included and can be easily customized.
+HAve a look at the following static property:
+```C#
+        public static WinFormThemeConfig DefaultDarkTheme
+        {
+            get
+            {
+                WinFormThemeConfig retVal = new WinFormThemeConfig();
+                retVal.formBackground = "#1A1A1A";
+                retVal.formForeground = "White";
+                retVal.darkTitleBar = true;
+                retVal.buttonBackground = "#1A1A1A";
+                retVal.buttonForeground = "White";
+                retVal.radioButtonBackground = "#1A1A1A";
+                retVal.radioButtonForeground = "White";
+                retVal.checkBoxBackground = "#1A1A1A";
+                retVal.checkBoxForeground = "White";
+                retVal.listItemBackground = "#1A1A1A";
+                retVal.listItemForeground = "White";
+                retVal.selection = "#403582";
+                retVal.selectionText = "#403582";
+                retVal.dataGridViewCellBackground = "#1A1A1A";
+                retVal.dataGridViewBackground = "#252526";
+                retVal.dataGridViewForeground = "White";
+                retVal.textBoxBackground = "#1A1A1A";
+                retVal.textBoxForeground = "White";
+                retVal.menuBackground = "#1A1A1A";
+                retVal.menuForeground = "White";
+                return retVal;
+            }
+        }
+    }
+```
+
+The themes can also be stored in JSON files
+```JavaScript
+{
+    "formBackground": "#1A1A1A",
+    "formForeground": "White",
+    "darkTitleBar": true,
+    "buttonBackground": "#1A1A1A",
+    "buttonForeground": "White",
+    "radioButtonBackground": "#1A1A1A",
+    "radioButtonForeground": "White",
+    "checkBoxBackground": "#1A1A1A",
+    "checkBoxForeground": "White",
+    "listItemBackground": "#1A1A1A",
+    "listItemForeground": "White",
+    "selection": "#403582",
+    "selectionText": "#403582",
+    "dataGridViewBackground": "#1A1A1A",
+    "dataGridViewForeground": "White",
+    "textBoxBackground": "#1A1A1A",
+    "textBoxForeground": "White",
+    "menuBackground": "#1A1A1A",
+    "menuForeground": "White",    
+}
+```
+
+## Default Dark Example 
+![](img/DarkSoundRipper.jpg)
+
+![](img/DarkWavHelper.jpg)
+
+![](img/DarkZeromunge.jpg)
