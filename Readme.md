@@ -126,7 +126,18 @@ The themes can also be stored in JSON files
 }
 ```
 
-## Default Dark Example 
+Which Can be loaded into a 'WinFormThemeConfigconfig' object and used like this:
+```C#
+ var config = WinFormThemeConfig.FromFile("myTheme.json");
+ new WinFormThemer(myForm,config) // apply custom theme config to 'myForm'
+
+ // or 
+ var config = WinFormThemeConfig.FromFile("myTheme.json");
+ var themer = new WinFormThemer(config) // apply custom theme config to 'myForm'
+ themer.ApplyTheme(myForm);
+```
+
+## Default Dark Examples
 ![](img/DarkSoundRipper.jpg)
 
 ![](img/DarkWavHelper.jpg)
